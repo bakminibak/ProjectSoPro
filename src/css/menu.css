@@ -90,7 +90,8 @@
 .menu__body-element,
 .menu__body-link {
   display: none;
-  margin: 3.4em 1em -2.3em 4em;
+  margin: 3.4em 1em -2.3em 0em;
+  font-size: 1rem;
   font-weight: normal;
   color: #e2e2e2;
   text-decoration: none !important;
@@ -105,14 +106,20 @@
   /* text-indent: 2em;*/
 }
 
+.menu a {
+  float: right;
+  clear: right;
+  padding-left: 35px;
+}
+
 .menu a:hover {
+  border-bottom: 1px solid #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .menu__body-link:hover {
   border-color: #e2e2e2;
   border: 0;
-  border-bottom: 1px solid #ffffff;
 }
 
 #menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger {
@@ -167,6 +174,6 @@
     width: 0;
   }
   100% {
-    width: 10%;
+    width: 50%;
   }
 }

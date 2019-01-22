@@ -128,12 +128,6 @@ section {
     text-align: center;
     height: 100%;
 }
-section.fullscr {
-    position: relative;
-    color: #ffffff;
-    padding: 100px;
-    height: auto;
-}
 section#intro {
     height: 100%;
     text-align: left;

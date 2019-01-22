@@ -8,6 +8,8 @@ $color-body:  #e2e2e2;
  $color-text:  #e2e2e2;
  $color-menu:  #fcfcfc;
 
+ $logo_maxwidth:400px;
+ $logo_mminwidth:250px;
 
  $brand-gray: #818285;
 
@@ -47,6 +49,7 @@ $color-body:  #e2e2e2;
   }
 }
 span#author {
+    display:none;
     font-size:0.8rem;
     a:link, a:visited {
         color: #ffffff;
@@ -161,7 +164,7 @@ span#author {
 }
 }
 section .introtxt h1 {
-    padding:250px 150px 20px 150px;
+    padding:250px 150px 20px 10vw;
     font-size: 6vmax;
     color: #ffffff;
     font-weight: normal;
@@ -179,6 +182,9 @@ section .introtxt h1 {
 }
 span.yellow {
     color: $yellow_grad;
+}
+span.dark {
+    color: #30052c !important;
 }
 .lead {
     padding-top:35%;
@@ -205,10 +211,44 @@ footer {
     clear: both;
 }
 #logo {
-    position: absolute;
+    position: fixed;
+    z-index:5000;
     top:0;
     left:0;
     .logo {
         display: none;
+    }
+    img {
+        width: 400px;
+        height:auto;
+    }
+    
+}
+#logo.animateSmall {    
+    img {
+        animation: logoAnimationSmall 1 both;
+    }
+}
+#logo.animateBig {    
+    img {
+        animation: logoAnimationBig 1 both;
+    }
+}
+@keyframes logoAnimationSmall {
+    0% {
+        
+        width: $logo_maxwidth;
+    }
+    100% {
+        width: $logo_minwidth;
+    }
+}
+@keyframes logoAnimationBig {
+    0% {
+        
+        width: $logo_minwidth;
+    }
+    100% {
+        width: $logo_maxwidth;
     }
 }

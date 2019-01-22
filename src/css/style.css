@@ -161,7 +161,7 @@ span#author a:link, span#author a:visited {
 }
 
 section .introtxt h1 {
-  padding: 250px 150px 20px 150px;
+  padding: 250px 150px 20px 10vw;
   font-size: 6vmax;
   color: #ffffff;
   font-weight: normal;
@@ -214,11 +214,43 @@ footer {
 }
 
 #logo {
-  position: absolute;
+  position: fixed;
+  z-index: 5000;
   top: 0;
   left: 0;
 }
 
 #logo .logo {
   display: none;
+}
+
+#logo img {
+  width: 400px;
+  height: auto;
+}
+
+#logo.animateSmall img {
+  animation: logoAnimationSmall 1 both;
+}
+
+#logo.animateBig img {
+  animation: logoAnimationBig 1 both;
+}
+
+@keyframes logoAnimationSmall {
+  0% {
+    width: 350px;
+  }
+  100% {
+    width: 150px;
+  }
+}
+
+@keyframes logoAnimationBig {
+  0% {
+    width: 150px;
+  }
+  100% {
+    width: 350px;
+  }
 }
