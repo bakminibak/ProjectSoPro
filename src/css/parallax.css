@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+#parallax-container {
+  display: block;
+  height: auto;
+}
+
+#parallax-container div {
+  position: absolute;
+  top: 0;
+  background-repeat: repeat-x;
+  background-position: center bottom !important;
+  transform: translateY(0px);
+  min-height: 140%;
+  height: auto;
+  width: 100%;
+  background-size: contain;
+}
+
+#content {
+  position: relative;
+  color: #ffffff;
+  padding: 100px;
+  padding-top: 60%;
+  width: auto;
+}
+
+#content p {
+  font-size: 18px;
+}

@@ -1,0 +1,172 @@
+/***************************
+ *	Variables
+ **************************/
+/***************************
+  *	Project Main Styles
+  **************************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/***************************
+  *	Application Main Styles
+  **************************/
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2000;
+  text-decoration: none;
+}
+
+#menu--toggle[type="checkbox"]:not(:checked),
+#menu--toggle[type="checkbox"]:checked {
+  display: none;
+}
+
+.menu--toggle__trigger,
+.menu--toggle__burger,
+.menu--toggle__burger:before,
+.menu--toggle__burger:after {
+  position: absolute;
+  top: 1.6em;
+  right: 1.6em;
+  width: 2em;
+  height: 5px;
+  background-color: #e2e2e2;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.menu--toggle__trigger {
+  height: 2em;
+  background: none;
+}
+
+.menu--toggle__burger:before {
+  content: "";
+  top: 10px;
+  left: 0;
+}
+
+.menu--toggle__burger:after {
+  content: "";
+  top: 20px;
+  left: 0;
+}
+
+.menu__body {
+  position: fixed;
+  width: 7em;
+  height: 7em;
+  margin: 0;
+  padding: 0;
+  padding-top: 25px;
+  right: 0;
+  background-color: #fcfcfc;
+  border-bottom-left-radius: 100%;
+  box-shadow: 3px 3px 7px rgba(226, 226, 226, 0.2);
+  z-index: 10;
+  animation: checkboxUncheckedAnimation 0.35s both;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3023ae+0,c86dd7+100 */
+  background: #6755b5;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #6755b5 0%, #b53359 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #6755b5 0%, #b53359 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #6755b5 0%, #b53359 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color-brand, endColorstr='$color-brand-secondary',GradientType=0 );
+  /* IE6-9 */
+}
+
+.menu__body-element,
+.menu__body-link {
+  display: none;
+  margin: 3.4em 1em -2.3em 4em;
+  font-weight: normal;
+  color: #e2e2e2;
+  text-decoration: none !important;
+  text-transform: none;
+  list-style: none;
+  outline: 0;
+  text-align: right;
+  color: #ffffff;
+}
+
+.menu__body-element {
+  /* text-indent: 2em;*/
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu__body-link:hover {
+  border-color: #e2e2e2;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+}
+
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger {
+  top: 35px;
+  transform: rotate(405deg);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger:before {
+  top: 0;
+  transform: rotate(-90deg);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger:after {
+  top: 0;
+  transform: rotate(90deg);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger + .menu__body {
+  animation: checkboxCheckedAnimation 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+#menu--toggle:checked + .menu--toggle__trigger ~ .menu__body .menu__body-element,
+#menu--toggle:checked + .menu--toggle__trigger ~ .menu__body .menu__body-link {
+  display: block;
+}
+
+/**
+  *	Animations
+  *
+  *  @note checkboxCheckedAnimation - added fix for Microsoft Edge
+  */
+@keyframes checkboxCheckedAnimation {
+  100% {
+    width: 20vw;
+    height: 50vh;
+    border-bottom-left-radius: 350px;
+  }
+}
+
+@keyframes checkboxUncheckedAnimation {
+  0% {
+    width: 20vw;
+    height: 50vh;
+  }
+}
+
+@keyframes changeWidthOfElementAnimation {
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 10%;
+  }
+}
