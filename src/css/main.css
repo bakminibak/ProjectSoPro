@@ -239,6 +239,24 @@ section#intro {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
+@media (max-width: 768px) {
+    h1, h2 {
+        padding-top:150px;
+      padding:0;
+      margin:0;
+      text-align: center !important;    
+    }   
+    #content {
+        padding-left:5px;
+        padding-right:5px;
+    }
+    section .introtxt h1  span {
+        padding:0;
+    }
+    .violetGradient {
+        display: none;
+    }
+  }
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
