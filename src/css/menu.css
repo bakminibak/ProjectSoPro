@@ -63,12 +63,13 @@
 
 .menu__body {
   position: fixed;
+  top: 0;
+  right: 0;
   width: 7em;
   height: 7em;
   margin: 0;
   padding: 0;
   padding-top: 25px;
-  right: 0;
   background-color: #fcfcfc;
   border-bottom-left-radius: 100%;
   box-shadow: 3px 3px 7px rgba(226, 226, 226, 0.2);
@@ -90,7 +91,7 @@
 .menu__body-element,
 .menu__body-link {
   display: none;
-  margin: 3.4em 1em -2.3em 0em;
+  margin: 3.1em 1em -2.3em 0em;
   font-size: 1rem;
   font-weight: normal;
   color: #e2e2e2;
@@ -100,15 +101,22 @@
   outline: 0;
   text-align: right;
   color: #ffffff;
+  width: auto;
 }
 
 .menu__body-element {
+  min-width: 250px;
+}
+
+.menu__body-element:first-child {
   /* text-indent: 2em;*/
+  margin: 1em 1em -2.3em 0em;
 }
 
 .menu a {
   float: right;
-  clear: right;
+  clear: both;
+  text-align: right;
   padding-left: 35px;
 }
 
@@ -120,6 +128,10 @@
 .menu__body-link:hover {
   border-color: #e2e2e2;
   border: 0;
+}
+
+#menu--toggle:checked + .menu--toggle__trigger + .menu__body {
+  min-width: 250px;
 }
 
 #menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger {
@@ -156,7 +168,8 @@
   */
 @keyframes checkboxCheckedAnimation {
   100% {
-    width: 20vw;
+    width: 25%;
+    min-width: 250px;
     height: 50vh;
     border-bottom-left-radius: 350px;
   }
@@ -170,8 +183,13 @@
 }
 
 @keyframes changeWidthOfElementAnimation {
+  0% {
+    width: 0;
+    display: none;
+  }
   50% {
     width: 0;
+    display: none;
   }
   100% {
     width: 50%;

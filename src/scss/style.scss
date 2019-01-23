@@ -71,7 +71,7 @@ span#author {
             font-size: 6vmax;
             color: #ffffff;
             font-weight:lighter;
-            span {
+            .introtxt span {
                 padding: 5px;
                 padding-left:2rem;
                 padding-right:2rem;
@@ -105,8 +105,9 @@ span#author {
 }
 .engage {
     background-image: url('../img/engage.png') !important;
-    background:no-repeat center  top;
+    background:no-repeat center  center;
     background-size: contain;
+    padding-top: 50px;
     
 }
 .engage:hover {
@@ -217,11 +218,14 @@ footer {
     z-index:5000;
     top:0;
     left:0;
+    width: 25%;
+    min-width: $logo_minwidth;
     .logo {
         display: none;
     }
     img {
-        width: 400px;
+        width: 100%;
+        min-width: $logo_minwidth;
         height:auto;
     }
     
