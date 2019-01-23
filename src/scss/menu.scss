@@ -81,18 +81,20 @@
  
  .menu__body {
    position: fixed;
+   top:0;
+   right:0;
    width: 7em;
    height: 7em;
    margin: 0;
    padding: 0;
    padding-top:25px;
-   right:0;
    background-color: $color-menu;
    border-bottom-left-radius: 100%;
    box-shadow: 3px 3px 7px rgba($color-text, .2);
    z-index: 10;
    animation: checkboxUncheckedAnimation $variable-burger-animation-time both;
 
+  
 
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3023ae+0,c86dd7+100 */
     background: $color-brand; /* Old browsers */
@@ -105,7 +107,7 @@
  .menu__body-element,
  .menu__body-link {
    display: none;
-   margin: 3.4em 1em -2.3em 0em;
+   margin: 3.1em 1em -2.3em 0em;
    font-size: 1rem;
    font-weight: normal;
    color: $color-text;
@@ -115,15 +117,21 @@
    outline: 0;
    text-align: right;
    color: #ffffff;
+   width: auto;
  }
- .menu__body-link {
+ .menu__body-link:first-child {
  }
  .menu__body-element {
+    min-width: 250px;
+ }
+ .menu__body-element:first-child {
   /* text-indent: 2em;*/
+  margin: 1em 1em -2.3em 0em;
  }
  .menu a {
    float: right;
-   clear: right;
+   clear:both;
+   text-align: right;
    padding-left: 35px;
  }
  .menu a:hover {
@@ -137,6 +145,9 @@
  
  #menu--toggle:checked + .menu--toggle__trigger {
    
+   & + .menu__body {
+    min-width: 250px;
+   }
    & + .menu--toggle__burger {
      top: 35px;
      transform: rotate(405deg);
@@ -171,7 +182,8 @@
   */
  @keyframes checkboxCheckedAnimation {
    100% {
-     width: 20vw;
+     width: 25%;
+     min-width: 250px;
      height: 50vh;
      border-bottom-left-radius:  350px;
    }
@@ -185,8 +197,13 @@
  }
  
  @keyframes changeWidthOfElementAnimation {
+   0%{     
+    width: 0;
+     display: none;
+   }
    50% {
      width: 0;
+     display: none;
    }
    100% {
      width: 50%;
