@@ -65,6 +65,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  max-width: 380px;
   width: 7em;
   height: 7em;
   margin: 0;
@@ -169,6 +170,7 @@
 @keyframes checkboxCheckedAnimation {
   100% {
     width: 25%;
+    max-width: 350px;
     min-width: 250px;
     height: 50vh;
     border-bottom-left-radius: 350px;
