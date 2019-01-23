@@ -9,7 +9,7 @@ $color-body:  #e2e2e2;
  $color-menu:  #fcfcfc;
 $color-link-dark:  #30052c;
  $logo_maxwidth:400px;
- $logo_mminwidth:250px;
+ $logo_minwidth:250px;
 
  $brand-gray: #818285;
 
@@ -23,13 +23,13 @@ $color-link-dark:  #30052c;
  body {    
     font-family:      $font-family;
     font-size:        $font-size;
-    background-color: $color-body;    
+    background-color: $color-body;   
  }
  h1 {
      text-transform: uppercase;
  }
  a:link {
-     color: #ffffff;
+     color: #ffffff !important;
      text-decoration: underline;
  }
 .yellowGradient {
