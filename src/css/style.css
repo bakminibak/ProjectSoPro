@@ -31,17 +31,30 @@ a:link {
   stop-color: #b53359;
 }
 
-span#author {
-  display: none;
+#content #author {
+  padding: 0;
+  margin: 0;
+  height: auto;
   font-size: 0.8rem;
 }
 
-span#author a:link, span#author a:visited {
-  color: #ffffff;
+#content #author a:link, #content #author a:visited {
+  color: #fcfcfc;
+  text-decoration: none;
+}
+
+#content #author a:hover {
+  text-decoration: underline;
 }
 
 #content section {
   height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10%;
 }
 
 #content section p {
@@ -53,8 +66,8 @@ span#author a:link, span#author a:visited {
 
 #content section h1 {
   line-height: 6vmax;
-  margin-bottom: 0px;
-  padding: 18vh 150px 20px 150px;
+  margin: 0px;
+  padding: 20px 150px 20px 150px;
   font-size: 6vmax;
   color: #ffffff;
   font-weight: lighter;
@@ -98,7 +111,6 @@ span#author a:link, span#author a:visited {
   background-image: url("../img/engage.png") !important;
   background: no-repeat center  center;
   background-size: contain;
-  padding-top: 50px;
 }
 
 #content .engage:hover {
@@ -113,7 +125,7 @@ span#author a:link, span#author a:visited {
 
 #content .email form {
   background: rgba(0, 0, 0, 0.5);
-  margin-top: 45%;
+  /*margin-top: 45%; */
   border-radius: 25px;
   padding: 55px 5px;
   width: 70%;
@@ -123,7 +135,7 @@ span#author a:link, span#author a:visited {
 }
 
 #content .email form h1, #content .email form h2 {
-  padding: 0 0 0 0;
+  padding: 0 10px 0 10px;
   margin: 0 0 0 0;
 }
 
@@ -164,7 +176,8 @@ span#author a:link, span#author a:visited {
 }
 
 section .introtxt h1 {
-  padding: 250px 150px 20px 10vw;
+  margin-top: 50px;
+  padding: 250px 150px 20px 5vw;
   font-size: 6vmax;
   color: #ffffff;
   font-weight: normal;
